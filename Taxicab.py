@@ -33,24 +33,21 @@ class Taxicab:
         """Obtains new values for y coordinates."""
         return self._y_coord
 
-    def get_odometer(self):
-        """Calculates odometer reading depending on entered values for coordinates x and y."""
-        return abs(self._y_coord) + abs(self._x_coord)
-
     def move_x(self, x_move):
-        """Obtains new value for y coordinate and replaces the old coordinate."""
-        self._x_coord += x_move
+        """Adds x movement to odometer reading"""
+        self._odometer += abs(x_move)  # takes absolute value of x_move
 
     def move_y(self, y_move):
-        """Obtains new value for y coordinate and replaces the old coordinate."""
-        self._y_coord += y_move
+        """Adds y movement to odometer reading."""
+        self._odometer += abs(y_move)  # takes absolute value of y_move
+
+    def get_odometer(self):
+        """Calculates odometer reading depending on entered values for coordinates x and y."""
+        return self._odometer
 
 
-"""Tests
 cab = Taxicab(5, -8)
-print(cab.get_odometer())
 cab.move_x(3)
-cab.move_y(-4)
 cab.move_x(-1)
+cab.move_y(-4)
 print(cab.get_odometer())
-"""
