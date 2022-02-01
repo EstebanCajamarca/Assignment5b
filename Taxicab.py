@@ -46,8 +46,9 @@ class Taxicab:
         return self._odometer
 
 
+"""testing
 cab = Taxicab(5, -8)
 cab.move_x(3)
 cab.move_x(-1)
 cab.move_y(-4)
-print(cab.get_odometer())
+print(cab.get_odometer())"""
